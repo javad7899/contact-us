@@ -5,7 +5,7 @@ import {
 import { SlLocationPin as SlLocationPinIcon } from "react-icons/sl";
 import FeatureItem from "./feature-item";
 
-const featureItemsDeatils = [
+const featureItemsDetails = [
   {
     icon: <FiPhoneCallIcon size={32} />,
     title: "شماره تماس",
@@ -25,14 +25,18 @@ const featureItemsDeatils = [
 
 const FeatureList = () => {
   return (
-    <div className="flex items-center gap-10 mt-20">
-      {featureItemsDeatils.map((item, index) => (
-        <FeatureItem
+    <div className="flex flex-wrap items-center justify-center gap-6 md:gap-10 mt-10 md:mt-20 px-4 w-full">
+      {featureItemsDetails.map((item, index) => (
+        <div
           key={index}
-          icon={item.icon}
-          title={item.title}
-          subtitle={item.subtitle}
-        />
+          className="flex flex-col items-center md:items-start text-center md:text-right max-w-md"
+        >
+          <FeatureItem
+            icon={item.icon}
+            title={item.title}
+            subtitle={item.subtitle}
+          />
+        </div>
       ))}
     </div>
   );
